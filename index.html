@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reading List</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header>
+        <h1>Reading List</h1>
+        <p>Track what you want to read, bookmark favorites, and highlight what matters.</p>
+      </header>
+
+      <section class="controls" aria-label="Add a new reading item">
+        <input id="titleInput" type="text" placeholder="Title" />
+        <input id="authorInput" type="text" placeholder="Author" />
+        <button id="addBtn" type="button">Add</button>
+      </section>
+
+      <section>
+        <ul id="list" class="reading-list" aria-live="polite"></ul>
+      </section>
+    </main>
+
+    <template id="itemTemplate">
+      <li class="item">
+        <div class="item-main">
+          <h2 class="title"></h2>
+          <p class="meta"></p>
+        </div>
+        <div class="item-actions">
+          <button class="bookmark-btn" type="button" aria-label="Toggle bookmark">☆ Bookmark</button>
+          <button class="highlight-btn" type="button" aria-label="Toggle highlight">Highlight</button>
+          <button class="remove-btn" type="button" aria-label="Remove item">Remove</button>
+        </div>
+      </li>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>

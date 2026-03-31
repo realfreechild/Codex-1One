@@ -1,0 +1,117 @@
+:root {
+  color-scheme: light dark;
+  --bg: #f4f5f8;
+  --card: #ffffff;
+  --text: #1d2330;
+  --muted: #556;
+  --accent: #2c6cff;
+  --highlight: #fff0a8;
+  --border: #d6d9e4;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.app {
+  width: min(860px, 92vw);
+  margin: 2rem auto;
+}
+
+header h1 {
+  margin-bottom: 0.4rem;
+}
+
+header p {
+  margin-top: 0;
+  color: var(--muted);
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+input,
+button {
+  font: inherit;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  padding: 0.65rem 0.8rem;
+}
+
+button {
+  cursor: pointer;
+  background: var(--card);
+}
+
+#addBtn {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: white;
+}
+
+.reading-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.7rem;
+}
+
+.item {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.9rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.item.highlighted {
+  background: var(--highlight);
+}
+
+.title {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.meta {
+  margin: 0.25rem 0 0;
+  color: var(--muted);
+}
+
+.item-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.bookmark-btn.active {
+  color: #b26f00;
+  border-color: #e0ab52;
+  background: #fff4de;
+}
+
+@media (max-width: 680px) {
+  .controls {
+    grid-template-columns: 1fr;
+  }
+
+  .item {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
